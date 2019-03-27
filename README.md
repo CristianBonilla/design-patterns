@@ -41,3 +41,19 @@ Se centra en cómo se utilizan los objetos, podría ser para algo como el rendim
 * **Fachada (Facade)**
 * **Peso mosca (Flyweight)**
 * **Proxy**
+
+### Patrones de comportamiento
+
+Se centran en como los objetos interactúan entre sí acerca de la comunicación y conjuntos de estos. Los siguientes son:
+
+* **Cadena de responsabilidad (Chain of Responsability)**
+* **Comando (Command)**
+* **Intérprete (Interpreter)**
+* **Iterador (Iterator)**
+* **Mediador (Mediator)**
+* **Recuerdo (Memento)**
+* **Observador (Observer)**
+* **Estado (State)**
+* **Estrategia (Strategy)**
+* **Método de plantilla (Template method)**
+* **Visitante (Visitor)**
