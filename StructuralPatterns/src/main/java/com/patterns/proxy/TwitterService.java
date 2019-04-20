@@ -1,6 +1,6 @@
 package com.patterns.proxy;
 
 public interface TwitterService {
-  String getTimeline(String screenName);
-  void postToTimeline(String screenName, String message);
+  public String getTimeline(String screenName);
+  public void postToTimeline(String screenName, String message);
 }
