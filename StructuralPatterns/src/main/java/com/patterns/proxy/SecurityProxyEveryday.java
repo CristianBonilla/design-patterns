@@ -5,10 +5,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class SecurityProxy implements InvocationHandler {
+public class SecurityProxyEveryday implements InvocationHandler {
   private Object object;
   
-  private SecurityProxy(Object object) {
+  private SecurityProxyEveryday(Object object) {
     this.object = object;
   }
   
@@ -16,18 +16,14 @@ public class SecurityProxy implements InvocationHandler {
     return Proxy.newProxyInstance(
         object.getClass().getClassLoader(), 
         object.getClass().getInterfaces(), 
-        new SecurityProxy(object));
+        new SecurityProxyEveryday(object));
   }
   
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
     Object result;
     try {
-      if (method.getName().contains("post")) {
-        throw new IllegalAccessException("Post's are currently not allowed");
-      } else {
-        result = method.invoke(object, args);
-      }
+      result = method.invoke(object, args);
     } catch (InvocationTargetException e) {
       throw e.getTargetException();
     } catch (Exception e) {
